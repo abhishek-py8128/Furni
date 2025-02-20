@@ -1,46 +1,31 @@
-"""
-URL configuration for Furni project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from .import views
 
 urlpatterns = [
-    path('',views.home_view, name='index'),
-    path('shop/',views.shop_view, name='shop'),
-    path('about/',views.about_view, name='about'),
-    path('blog/',views.blog_view, name='blog'),
-    path('cart/',views.show_cart, name='cart'),     
-    path('checKout/',views.checkout_view, name='checKout'),
-    path('contact/',views.contact_view, name='contact'),
-    path('services/',views.services_view, name='services'),
-    path('thankyou/',views.thankyou_view, name='thankyou'),
-    path('signup/',views.signup, name='login_page'),
-    path('login/',views.login, name='login_page'),
-    path('addTo_cart/',views.add_to_cart, name='addTo_cart'),
-    path('logout/',views.logout, name='logout'),  
+    path('', views.home_view, name='index'),
+    path('shop/', views.shop_view, name='shop'),
+    path('about/', views.about_view, name='about'),
+    path('blog/', views.blog_view, name='blog'),
+    path('cart/', views.show_cart, name='cart'),     
+    path('checkout/', views.checkout_view, name='checkout'),  # Fixed casing
+    path('contact/', views.contact_view, name='contact'),
+    path('services/', views.services_view, name='services'),
+    path('thankyou/', views.thankyou_view, name='thankyou'),
+    path('signup/', views.signup, name='signup'),  # Fixed duplicate name
+    path('login/', views.login, name='login_page'),
+    path('add-to-cart/', views.add_to_cart, name='add_to_cart'),  # Fixed naming convention
+    path('logout/', views.logout, name='logout'),  
     path('update-cart/', views.update_cart, name='update_cart'),
     path('delete-cart/', views.delete_cart, name='delete_cart'),   
     path('orders/', views.order, name='orders'),   
     path('search/', views.search, name='search'),   
-    # payment regading url 
+    # Payment-related URL  
     path('payment-cart/', views.payment_cart, name='payment'),   
 ]
 
+# Serve static files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
