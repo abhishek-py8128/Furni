@@ -152,12 +152,11 @@ def signup(request) :
         else:
             messages.success(request, 'Congratulations! Registration Successful')
             customer.register()
-            return redirect(f'/signup')
+            return redirect('signup')
            
     return render(request, 'login_page.html')        
 
 # =========================Login============================== 
-
 
 def login(request) :
     if request.method == 'GET' :
@@ -183,7 +182,7 @@ def login(request) :
             # is used to store a value in the user's session data ===== Information Server par hold karin rake =====
             
             request.session['phone'] = phone  # ====> The line of code stores the value of the phone variable in the 
-            return redirect('/')              # session data under the key 'phone'. <=====
+            return redirect('index')              # session data under the key 'phone'. <=====
         else :
             error_message = 'Mobile Number is Invalid !!'
             data = {
