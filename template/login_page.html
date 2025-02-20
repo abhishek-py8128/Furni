@@ -25,14 +25,16 @@
                 <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-                <form action="/login/" method="post" class="login">
+                <form action="{% url 'login_page' %}" method="post" class="login">
                     {% csrf_token %}
 
                     <!-- Error Message -->
-                    {% if error %}
-                    <div class="alert alert-danger form-control-sm" role="alert">
-                        {{ error }}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} form-control-sm" role="alert">
+                        {{ message }}
                     </div>
+                    {% endfor %}
                     {% endif %}
 
                     <!-- <div class="field">
@@ -45,11 +47,11 @@
                         <div class="btn-layer"></div>
                         <input type="submit" value="Login">
                     </div>
-                    <div class="signup-link">Not a member? <a href="/signup">Signup now</a></div>
+                    <div class="signup-link">Not a member? <a href="{% url 'signup' %}">Signup now</a></div>
                 </form>
 
                 <!-- ============== Signup Form ==============  -->
-                <form action="/signup/" method="post" class="signup">
+                <form action="{% url 'signup' %}" method="post" class="signup">
                     {% csrf_token %}
 
                     <!-- Success Messages -->
