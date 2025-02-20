@@ -31,7 +31,7 @@ def home_view(request):
         return render(request, 'index.html',data)
 
     else :
-        return redirect(f'/login')    
+        return redirect('login')    
 
 def about_view(request) :
 
