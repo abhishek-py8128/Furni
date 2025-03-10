@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 def home_view(request):
     set = gallery_view.get_all_gallery_view() # get all gallery Images products
     # print('Actual Data print',set)
-   
+    print('gallery_view Data', set)
     totalItem = 0  
     # print('You are',request.session.get('phone'))
       
