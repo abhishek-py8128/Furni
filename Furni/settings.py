@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Furni.wsgi.application'
+WSGI_APPLICATION = 'Furni.wsgi.application' 
 
 
 # Database
