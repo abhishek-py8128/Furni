@@ -5,6 +5,7 @@ from polls.models import Product, Customer, Cart, gallery_view, OrderDetail, Pay
 from django.shortcuts import get_object_or_404 
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 
 def home_view(request):
     set = gallery_view.get_all_gallery_view() # get all gallery Images products
