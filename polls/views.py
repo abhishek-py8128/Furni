@@ -133,7 +133,7 @@ def shop_view(request):
         return redirect('login_page')
     
 # =========================Signup==============================
-
+@csrf_protect
 def signup(request) :
     # print(request.method) # check for the method 
 
@@ -186,7 +186,7 @@ def signup(request) :
     return render(request, 'login_page.html')        
 
 # =========================Login============================== 
-
+@csrf_protect
 def login_view(request) :
     if request.method == 'GET' :
         return render(request, 'login_page.html')
