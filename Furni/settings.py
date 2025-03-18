@@ -140,6 +140,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     'https://furni-s36b.onrender.com',
 ]
-
-
-# https://www.youtube.com/watch?v=glL2mkdyAp4   
