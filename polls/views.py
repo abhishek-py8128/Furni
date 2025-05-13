@@ -480,7 +480,7 @@ def payment_cart(request) :
         print(amount)
 
         # How to create payment Id
-        client = razorpay.Client(auth=("rzp_test_bHGARzasqPyY7j","1Ae7bF0U1f1Z9m2FZzD3RhR0"))
+        client = razorpay.Client(auth=("rzp_test_3OUe88CHwcmGfg","fJovYka9xHHF2muAdzXs4Hpm"))
         # payment id genrate
         payments = client.order.create({'amount':amount, 'currency':'INR', 'payment_capture':1})
         print('payment',payments)
